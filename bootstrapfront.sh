@@ -29,7 +29,7 @@ wait_tcp_ready()
 
 	docker-compose exec -T "$container" bash -c "
 	(	set -e
-		while true; do 
+		while true; do
 			if true < '/dev/tcp/localhost/$tcp_port' ; then
 				echo 'connected to $container port $tcp_port'
 				exit 0
@@ -109,7 +109,7 @@ if [ -n "$deploy" ] ; then
 	else
 		# overwrite (--force)
 		# -> just remove all existing containers
-		# 
+		#
 		# Note: we must ensure that all containers are removed because:
 		# - 'docker-compose run' should not be used when the
 		#   corresponding service is up
@@ -135,11 +135,5 @@ if [ -n "$deploy" ] ; then
 			-- docker-compose logs --no-color --follow keycloak >/dev/null
 
 
-	# 5. nginx
-	step "start: nginx"
-	docker-compose up -d nginx
-
-	step "start: wordpress"
-	docker-compose up -d mariadb
-	docker-compose up -d wordpress
+	# 6. wordpress
 fi

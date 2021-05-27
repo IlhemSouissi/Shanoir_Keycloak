@@ -67,7 +67,7 @@ public class ShanoirNgPostAuthAuthenticator implements Authenticator {
 	// eg: -Dms.users.url=http://users:9901
 	//
 	private static final String urlRecordLoginDate =
-		System.getProperty("ms.users.url", "http://users:9901") + "/last_login_date";
+		System.getProperty("ms.users.url", "http://10.2.68.4:9901") + "/last_login_date";
 
 	// date format for the expirationDate user attribute
 	private static final SimpleDateFormat expDateFormat = new SimpleDateFormat("yyy-MM-dd");
